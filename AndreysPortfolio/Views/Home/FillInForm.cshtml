@@ -1,0 +1,35 @@
+﻿@model Request
+
+@{
+    ViewData["Title"] = "Fill In Form";
+}
+
+<body>
+    <div class="text-center">
+        <h1 class="pt-5 mb-5">Оставить заявку</h1>
+        <p class="mx-auto mt-5 mb-5" style="width: 400px;">
+            В данной форме укажите ваше имя, номер телефона для обратной связи,
+            и описание объекта который вы желаете оформить, краткое описание, ваши пожелания и площадь поверхности
+        </p>
+    </div>
+    <div class="form-signin w-100 m-auto">
+        <form method="post" asp-controller="Home" asp-action="HandleRequest">
+            <div class="mx-auto mb-3 text-start" style="width: 400px;">
+                <input asp-for="Name" class="form-control" placeholder="Name" />
+                <span asp-validation-for="Name" style="color: red"></span>
+            </div>
+            <div class="mx-auto mb-3 text-start" style="width: 400px;">
+                <input asp-for="PhoneNumber" class="form-control" placeholder="PhoneNumber" />
+                <span asp-validation-for="PhoneNumber" style="color: red"></span>
+            </div>
+            <div class="mx-auto mb-3 text-start" style="width: 400px;">
+                <textarea asp-for="Message" class="form-control" style="resize: none;" rows="5" placeholder="Message"> </textarea>
+                <span asp-validation-for="Message" style="color: red"></span>
+            </div>
+            <div class="mx-auto mb-3 text-start" style="width: 400px;">
+                <button class="w-100 btn btn-primary" type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+</body>
+

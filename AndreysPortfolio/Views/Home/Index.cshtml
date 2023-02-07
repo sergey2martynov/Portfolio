@@ -1,0 +1,15 @@
+﻿@using AndreysPortfolio.Models
+@model IEnumerable<Project>
+
+<div class="row mt-5 mb-2">
+    @{
+        ViewData["Title"] = "Home Page";
+        foreach (var project in Model)
+        {
+            <div class="col-lg-4 mt-5">
+                <img src="@project.Image" width="400"/>
+                <t>@project.Name</t>
+            </div>
+        }
+    }
+</div>
